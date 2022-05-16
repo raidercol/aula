@@ -1,0 +1,65 @@
+public class metodos {
+    public int calculaPar(int[] v){
+        int par = 0;
+        for(int i = 0; i < v.length; i++){
+            if(v[i] % 2 == 0){
+                par ++;
+            }
+        }
+        return par;
+    }
+    public int calculaImpar(int[] p){
+        int impar = 0;
+        for(int x  =0; x<p.length; x++){
+            if(p[x] % 2 != 0){
+                impar++;
+            }
+        }
+        return impar;
+    }
+}
+
+import java.util.Scanner;
+
+public class vetores {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("quantos coiso tu quer");
+        int tam = sc.nextInt();
+        
+        int[] vet = new int [tam];
+        for(int i = 0; i< vet.length; i++){
+            System.out.println("Digite o númeor: ");
+            vet[i] = sc.nextInt();
+        }
+
+        metodos m = new metodos();
+        System.out.println(m.calculaPar(vet));
+        System.out.println(m.calculaImpar(vet));
+    }
+}
+public class desafio{
+
+    public static int encontraMaior(int[] v){
+        int maior = 0;
+        for(int i = 0; i < v.length; i++){
+            if(maior < v[i]){
+                maior = v[i];
+            }
+        }
+        return maior;
+    }
+
+
+    public static void main(String[] args) {
+
+        int[] v = new int[10];
+        for(int i = 0; i < v.length ; i++){
+            v[i]=0;
+        }
+        v[1]=10;
+        v[3]=28;
+        v[6]=20;
+        System.out.println("maior: " + encontraMaior(v));
+    }
+}
